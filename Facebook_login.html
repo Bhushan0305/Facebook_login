@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login to Facebook</title>
+
+<style>
+body{
+    
+}
+
+@media (max-width: 400px) {
+    .box {
+        margin: 20px 5px;
+        max-width: 98%;
+        padding: 10px 2px;
+    }
+    .Newbutton {
+        width: 98%;
+        font-size: 15px;
+    }
+}
+    
+
+.box{
+   /* width: 350px;
+    height: 300px;*/
+    width: 500px;
+    height: 40%;
+    margin: 70px;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    margin-left: 35%;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-bottom: 50%;
+     text-align: center;
+    
+    
+
+}
+
+h1 , p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #5890FF;
+    text-align: center;
+}
+
+.email{
+    border-radius: 3px;
+    margin-top: 30px;
+    width: 85%;
+    height: 25px;
+    
+
+        }
+.password{
+    border-radius: 3px;
+    margin-top: 8px;
+    width: 85%;
+    height: 25px;
+
+}
+
+.button{
+    border-radius: 3px;
+    margin-top: 8px;
+    width: 87%;
+    height: 30px;
+    background-color: #5890FF;
+    color: aliceblue;
+    border-color: #5890FF;
+    cursor:pointer
+}
+.Newbutton{
+    width: 180px;
+    height: 35px;
+    margin-top: 10px;
+    background-color: rgb(134, 220, 7);
+    color: white;
+    border-color:rgb(134, 220, 7); 
+    border-radius: 3px;
+    margin-bottom: 15px;
+    cursor:pointer
+
+}
+
+#error, #errorp {
+    margin: 4px 0 0 0; /* top, right, bottom, left */
+    font-size: 14px;
+    min-height: 18px; /* keeps space even when no error */
+}
+.email, .password {
+    margin-bottom: 2px;
+}
+
+    </style>
+</head>
+<body>
+<div>
+    <h1 style="color: #5890FF;text-align:center;margin-top:75px" ,>Facebook</h1>
+    <p style="text-align: center;margin-top:-15px;color:black;">Connect with friends and the world around you on Facebook</p>
+
+    <div class="box">
+        <input id="email" class="email" type="text" placeholder="  Email or Phone Number">
+        <div class="error"></div>
+        <p id="error" style="color: red;"></p>
+
+        <input id="password" class="password" type="text" placeholder="  Password">
+        <div class="errorp"></div>
+        <p id="errorp" style="color: red ;"></p>
+
+
+        <button class="button" onclick="login()">Log In</button>
+        
+        <p style="color:#5890FF; margin-bottom: 15px ;  cursor:pointer">Forgotten Password?</p>
+        <hr style="width: 80%; margin-top:20px;">
+
+        <button class="Newbutton">Create New Account</button><br>
+        
+
+
+    </div>
+    <script>
+        function login(){
+            let a=email();
+            let b=password();
+            if (a && b){
+                alert("successfully logged in");
+            }
+        }
+        function email(){
+            const email=document.getElementById("email").value;
+            const error=document.getElementById("error");
+
+            if (email === ""){
+                error.textContent="Email or Phone Number is required!!";
+                return false;
+            }
+            else if (email.length < 10  ){
+                error.textContent=" data must be at least 10 characters long";
+                return false;
+            }
+            else {
+                error.textContent="";
+                return true;
+            }
+        }
+
+            function password(){
+                const password=document.getElementById("password").value;
+                const errorp=document.getElementById("errorp");
+
+                if (password ===""){
+                    errorp.textContent="password is required!!";
+                    return false;
+                }
+                else if(password.length <6){
+                    errorp.textContent="password must be at least 6 characters long";
+                    return false;
+                }
+                else{
+                    errorp.textContent="";
+                    return true;
+                }
+            }
+
+           
+
+
+        
+    </script>
+</div>
+</body>
+</html>
